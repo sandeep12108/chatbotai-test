@@ -102,33 +102,9 @@
         </div>
         <div class="chat-input">
             <input type="text" id="userInput" placeholder="Type something cute...">
-            <button onclick="sendMessage()">Send</button>
+            <button>Send</button>
         </div>
     </div>
-
-    <script>
-        function sendMessage() {
-            const userInput = document.getElementById('userInput');
-            const chatMessages = document.getElementById('chatMessages');
-            if (userInput.value.trim() !== "") {
-                const userMessageDiv = document.createElement('div');
-                userMessageDiv.className = 'message user-message';
-                userMessageDiv.textContent = userInput.value;
-                chatMessages.appendChild(userMessageDiv);
-
-                // Simulate bot response
-                setTimeout(() => {
-                    const botMessageDiv = document.createElement('div');
-                    botMessageDiv.className = 'message bot-message';
-                    botMessageDiv.textContent = "💖 Aww! That's adorable! How can I help you today?";
-                    chatMessages.appendChild(botMessageDiv);
-                    chatMessages.scrollTop = chatMessages.scrollHeight;
-                }, 500);
-
-                userInput.value = '';
-                chatMessages.scrollTop = chatMessages.scrollHeight;
-            }
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
